@@ -1,0 +1,15 @@
+.colaborate .text{
+    /* background-color: aquamarine; */
+    border-right: 2px solid black;
+}
+
+.colaborate .text p{
+    font-size: 2rem;
+    margin-bottom: -1vw;
+}
+
+.colaborate .text h1{
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: -1.5vw;
+}

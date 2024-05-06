@@ -1,0 +1,21 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+.btn{
+    border: 1px black solid;
+    padding: 0.5vw 2vw;
+    border-radius: 5px;
+    font-weight: 500;
+}
+.btn:hover{
+    color: white;
+    font-weight: 500;
+    background-color: black;
+    border: 1px black solid;
+    padding: 0.5vw 2vw;
+}
