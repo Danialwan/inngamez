@@ -20,7 +20,7 @@
         </a>
     </header>
 
-    <section id="homeDescription" class="homeDescription flex justify-center">
+    <section id="homeDescription" class="homeDescription flex justify-center md:p-10 xl:p-0">
         <p data-aos="fade-up" class="z-30 text-center">We are a game studio that focuses on limitless creativity, deep experiences, and
             immersive depth.
             With a team
@@ -30,11 +30,11 @@
             to immerse themselves in unforgettable adventures.</p>
     </section>
     <section class="ourGame">
-        <div data-aos="fade-up" class="title flex justify-center mb-20">
+        <div data-aos="fade-up" class="title flex justify-center md:mb-10 mt-10 xl:mb-20">
             <h1>OUR GAME</h1>
         </div>
         <center>
-            <div class="gameCard grid grid-cols-4 gap-10 text-center px-40">
+            <div class="gameCard grid md:grid-cols-2 gap-10 px-8 py-5 xl:grid-cols-4 gap-10 text-center px-40">
                 <div data-aos="flip-right" class="card rounded-lg grid grid-rows-3 gap-4" style="background-image: url('{{asset("images/home/GameIcon_01.png")}}')">
                 </div>
                 <div data-aos="flip-right" class="card rounded-lg grid grid-rows-3 gap-4" style="background-image: url('{{asset("images/home/GameIcon_02.png")}}')">
@@ -47,8 +47,8 @@
             </div>
         </center>
     </section>
-    <section class="recentWorks flex flex-col items-center p-20">
-        <div data-aos="fade-up" class="title mb-20">
+    <section class="recentWorks flex flex-col items-center md:p-10 py-10 px-10 xl:p-20">
+        <div data-aos="fade-up" class="title mb-10">
             <h1>RECENT WORKS</h1>
         </div>
         <video data-aos="fade-up" class="rounded-lg" width="808" height="542" controls>

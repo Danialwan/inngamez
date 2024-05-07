@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
-<footer class="grid grid-cols-3 gap-10 p-10 ps-20">
+<footer class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 p-10 ps-20">
     <div class="footerText pe-10">
         <b>INNGAMEZ</b>
         <p>All company names, brand names, trademarks, logos, illustrations, videos and any other intellectual property
