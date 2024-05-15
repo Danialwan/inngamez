@@ -1,0 +1,19 @@
+.LoginContainer {
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    color: white;
+}
+
+.LoginCard {
+    border: 1px solid white;
+    width: 50vw;
+    /* height: 50vh; */
+}
+
+.LoginTitle b {
+    font-size: 2rem;
+}
+.LoginBody form{
+    border-right: 1px solid white;
+}

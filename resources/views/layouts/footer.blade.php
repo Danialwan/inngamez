@@ -18,5 +18,5 @@
     </div>
 </footer>
 <div class="copyright flex justify-center p-5">
-    <p>© 2024 INNGAMEZ STUDIO. ALL RIGHT RESERVED</p>
+    <a href="/login">© 2024 INNGAMEZ STUDIO. ALL RIGHT RESERVED</a>
 </div>

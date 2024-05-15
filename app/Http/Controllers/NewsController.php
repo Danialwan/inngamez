@@ -22,7 +22,17 @@ class NewsController extends Controller
         // return $data;
         return view('news')->with('news', $news);
     }
-
+    public function admin()
+    {
+        $news = News::all();
+        // $body =  Str::words(News::pluck('body'), 10, '...');
+        // $data = [
+        //     'news' => $news,
+        //     'body' => $body
+        // ];
+        // return $data;
+        return view('admin.news')->with('news', $news);
+    }
     /**
      * Show the form for creating a new resource.
      */

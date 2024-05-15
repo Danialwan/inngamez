@@ -21,7 +21,8 @@
     </header>
 
     <section id="homeDescription" class="homeDescription flex justify-center md:p-10 xl:p-0">
-        <p data-aos="fade-up" class="z-30 text-center">We are a game studio that focuses on limitless creativity, deep experiences, and
+        <p data-aos="fade-up" class="z-30 text-center">We are a game studio that focuses on limitless creativity, deep
+            experiences, and
             immersive depth.
             With a team
             comprised of bold artists, designers, writers, and developers, we are committed to creating interactive works of
@@ -34,15 +35,57 @@
             <h1>OUR GAME</h1>
         </div>
         <center>
-            <div class="gameCard grid md:grid-cols-2 gap-10 px-8 py-5 xl:grid-cols-4 gap-10 text-center px-40">
-                <div data-aos="flip-right" class="card rounded-lg grid grid-rows-3 gap-4" style="background-image: url('<?php echo e(asset("images/home/GameIcon_01.png")); ?>')">
+            <div data-aos="fade-up"
+                class="gameCard grid md:grid-cols-2 gap-10 xl:grid-cols-4 gap-10 text-center">
+                <div class="wrapper rounded-lg">
+                    <div class="card rounded-lg">
+                        <div class="cardFront rounded-lg"
+                            style="background-image: url('<?php echo e(asset('images/home/GameIcon_01.png')); ?>')"></div>
+                        <div class="cardBack card-1 rounded-lg flex flex-col justify-center items-center">
+                            <b class="mb-3">Lorem, ipsum.</b>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni tempore voluptas unde vero
+                                numquam error beatae aliquid fuga nesciunt excepturi.</p>
+                            <a href="" class="cardBtn rounded-lg mt-4">start</a>
+                        </div>
+                    </div>
                 </div>
-                <div data-aos="flip-right" class="card rounded-lg grid grid-rows-3 gap-4" style="background-image: url('<?php echo e(asset("images/home/GameIcon_02.png")); ?>')">
+                <div class="wrapper rounded-lg">
+                    <div class="card rounded-lg">
+                        <div class="cardFront rounded-lg"
+                            style="background-image: url('<?php echo e(asset('images/home/GameIcon_02.png')); ?>')"></div>
+                        <div class="cardBack card-2 rounded-lg flex flex-col justify-center items-center">
+                            <b class="mb-3">Lorem, ipsum.</b>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat aut sint cumque assumenda
+                                maiores pariatur et accusantium quisquam odio voluptatibus?</p>
+                            <a href="" class="cardBtn rounded-lg mt-4">start</a>
+                        </div>
+                    </div>
                 </div>
-                <div data-aos="flip-right" class="card rounded-lg grid grid-rows-3 gap-4" style="background-image: url('<?php echo e(asset("images/home/GameIcon_03.png")); ?>')">
+                <div class="wrapper rounded-lg">
+                    <div class="card rounded-lg">
+                        <div class="cardFront rounded-lg"
+                            style="background-image: url('<?php echo e(asset('images/home/GameIcon_04.png')); ?>')"></div>
+                        <div class="cardBack card-3 rounded-lg flex flex-col justify-center items-center">
+                            <b class="mb-3">Lorem, ipsum.</b>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae natus sit eius suscipit
+                                aut. Exercitationem dolor tempora dolorum distinctio totam?</p>
+                            <a href="" class="cardBtn rounded-lg mt-4">start</a>
+                        </div>
+                    </div>
                 </div>
-                <div data-aos="flip-right" class="card rounded-lg grid grid-rows-3 gap-4" style="background-image: url('<?php echo e(asset("images/home/GameIcon_04.png")); ?>')">
+                <div class="wrapper rounded-lg">
+                    <div class="card rounded-lg">
+                        <div class="cardFront rounded-lg"
+                            style="background-image: url('<?php echo e(asset('images/home/GameIcon_03.png')); ?>')"></div>
+                        <div class="cardBack card-4 rounded-lg flex flex-col justify-center items-center">
+                            <b class="mb-3">Lorem, ipsum.</b>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci fuga quibusdam, optio vel
+                                incidunt numquam ipsum debitis eum minus ab.</p>
+                            <a href="" class="cardBtn rounded-lg mt-4">start</a>
+                        </div>
+                    </div>
                 </div>
+
 
             </div>
         </center>
