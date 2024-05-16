@@ -48,6 +48,27 @@ header {
     margin-bottom: -0.5vw;
 }
 
+.ContactUsContainer.admin ul li {
+    width: 20vw;
+    height: 5vh;
+    padding-left: 0.5vw;
+    border: 1px solid white;
+}
+.ContactUsContainer.admin ul li a{
+    align-self: flex-start;
+    padding: 1rem;
+    border: 1px solid white;
+    background-image: url('../images/icon/edit_white.svg');
+    background-position: center;
+    background-size: 50%;
+    background-repeat: no-repeat;
+}
+.ContactUsContainer.admin ul li a:hover{
+    background-image: url('../images/icon/edit_black.svg');
+    align-self: flex-start;
+    background-color: white;
+    color: black;
+}
 .btn-submit {
     background-color: white;
     color: black;
@@ -71,9 +92,11 @@ header {
     .ContactUsContainer .contact {
         border-right: none;
     }
-    .ContactUsContainer .message{
+
+    .ContactUsContainer .message {
         border-bottom: 1px solid white;
     }
+
     header {
         display: flex;
         justify-content: center;
@@ -121,11 +144,13 @@ header {
         padding: 0;
         letter-spacing: 3px;
     }
+
     .ContactUsContainer .contact {
         border-right: none;
         padding: 10vh 0;
     }
-    .ContactUsContainer .message{
+
+    .ContactUsContainer .message {
         border-bottom: 1px solid white;
         padding: 10vh 0;
     }
