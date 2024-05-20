@@ -38,7 +38,7 @@
                         <div data-aos="flip-right" class="card rounded-lg flex justify-end items-start"
                         style="background-image: url('{{ asset('images/about/Foto Tim/Example.jpg') }}')">
                         {{-- <a class="delete" href=""></a> --}}
-                        <a class="edit" href=""></a>
+                        <a class="edit" href="{{'/news/'.$item->id.'/edit'}}"></a>
                         </div>
                         <div class="newsText mt-4">
                             <b class="newsTitle">{{ Illuminate\Support\Str::of($item->title)->limit(40) }}</b>
@@ -47,7 +47,7 @@
                         </div>
                     </div>
                 @endforeach
-                <a class="addNews rounded-lg flex justify-center items-center" href="">
+                <a class="addNews rounded-lg flex justify-center items-center" href="/news/create">
                     <img class="stroke-1" src="{{ asset('images/icon/plus.svg') }}" alt="">
                 </a>
             </div>

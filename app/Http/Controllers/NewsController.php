@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Inertia\Inertia;
 
 class NewsController extends Controller
 {
@@ -38,7 +39,8 @@ class NewsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.createNews');
+        // return Inertia::render('')
     }
 
     /**
@@ -54,7 +56,7 @@ class NewsController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('newsDetail');
     }
 
     /**
@@ -62,7 +64,8 @@ class NewsController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $news = News::where('id',$id)->first();
+        return view('admin.editNews')->with('news', $news);
     }
 
     /**

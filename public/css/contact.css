@@ -49,12 +49,13 @@ header {
 }
 
 .ContactUsContainer.admin ul li {
-    width: 20vw;
+    width: 40vh;
     height: 5vh;
     padding-left: 0.5vw;
     border: 1px solid white;
 }
-.ContactUsContainer.admin ul li a{
+
+.ContactUsContainer.admin ul li button {
     align-self: flex-start;
     padding: 1rem;
     border: 1px solid white;
@@ -63,12 +64,14 @@ header {
     background-size: 50%;
     background-repeat: no-repeat;
 }
-.ContactUsContainer.admin ul li a:hover{
+
+.ContactUsContainer.admin ul li button:hover {
     background-image: url('../images/icon/edit_black.svg');
     align-self: flex-start;
     background-color: white;
     color: black;
 }
+
 .btn-submit {
     background-color: white;
     color: black;
@@ -86,8 +89,73 @@ header {
     font-weight: 700;
     margin-bottom: -0.5vw;
 }
-table{
-    /* border: 1px solid white; */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 100;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.ModalBtn{
+    padding: 0.5vh 4vh;
+    border: 1px solid black;
+    font-size: 1rem;
+}
+.ModalBtn:hover{
+    background-color: black;
+    color: white;
+}
+.tableMessageLarge{
+    display: block;
+}
+.tableMessageSmall{
+    display: none;
+}
+.back{
+    width: 6vh;
+    height: 6vh;
+    /* background-color: #ffffff; */
+    background-image: url('../images/icon/back_white.svg');
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 @media screen and (max-width: 992px) {
 
@@ -149,13 +217,19 @@ table{
 
     .ContactUsContainer .contact {
         border-right: none;
-        padding: 10vh 0;
+        padding: 5vh 0;
     }
 
     .ContactUsContainer .message {
         border-bottom: 1px solid white;
-        padding: 10vh 0;
+        padding: 0vh 0;
+        padding-bottom: 5vh;
     }
-
+    .tableMessageLarge{
+        display: none;
+    }
+    .tableMessageSmall{
+        display: block;
+    }
 
 }

@@ -7,7 +7,7 @@
  </div>
  <div class="menu">
     <ul class="flex link">
-        <li class="active"><a href="/" id="link">Home</a></li>
+        <li class="active"><a href="/admin/home" id="link">Home</a></li>
         <li><a href="/admin/about" id="link">About</a></li>
         <li><a href="/admin/news" id="link">News</a></li>
         <li><a href="/admin/contact" id="link">Contact</a></li>
@@ -19,7 +19,7 @@
 </nav>
 <div class="menu-responsive z-40 hidden" id="myMenu">
     <ul class="link-responsive ">
-        <a href="/" id="link"><li>Home</li></a>
+        <a href="/admin/home" id="link"><li>Home</li></a>
         <a href="/admin/about" id="link"><li>About</li></a>
         <a href="/admin/news" id="link"><li>News</li></a>
         <a href="/admin/contact" id="link"><li>Contact</li></a>

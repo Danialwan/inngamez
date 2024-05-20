@@ -34,9 +34,10 @@
         <center>
             <div class="newsContainer grid md:grid-cols-2 gap-10 px-8 py-5 xl:grid-cols-4 gap-10 text-center px-40">
                 @foreach ($news as $item)
-                    <a class="news" href="">
+                    <a class="news" href="/news/1">
                         <div data-aos="flip-right" class="card rounded-lg grid grid-rows-3 gap-4"
-                            style="background-image: url('{{ asset('images/about/Foto Tim/Example.jpg') }}')">
+                            {{-- style="background-image: url('{{ asset('images/news/'.$item->image) }}')"> --}}
+                            style="background-image: url('{{ asset('images/news/news1.jpg') }}')">
                         </div>
                         <div class="newsText mt-4">
                             <b class="newsTitle">{{Illuminate\Support\Str::of($item->title)->limit(40)}}</b>

@@ -32,44 +32,44 @@
             <h1>OUR TEAM</h1>
         </div>
         <center>
-            <div class="gameCard grid md:grid-cols-2 gap-10 px-8 py-5 xl:grid-cols-4 gap-10 text-center px-40">
+            <div class="gameCard grid md:grid-cols-2 gap-10 px-7 py-5 xl:grid-cols-4 gap-10 text-center xl:px-28">
                 <div data-aos="flip-right" class="card rounded-lg grid grid-rows-3 gap-4"
-                    style="background-image: url('<?php echo e(asset('images/about/Foto Tim/Example.jpg')); ?>')">
+                    style="background-image: url('<?php echo e(asset('images/TeamPicture/ProfileIcon_01.png')); ?>')">
                 </div>
                 <div data-aos="flip-right" class="card rounded-lg grid grid-rows-3 gap-4"
-                    style="background-image: url('<?php echo e(asset('images/about/Foto Tim/Example.jpg')); ?>')">
+                style="background-image: url('<?php echo e(asset('images/TeamPicture/ProfileIcon_02.png')); ?>')">
                 </div>
                 <div data-aos="flip-right" class="card rounded-lg grid grid-rows-3 gap-4"
-                    style="background-image: url('<?php echo e(asset('images/about/Foto Tim/Example.jpg')); ?>')">
+                style="background-image: url('<?php echo e(asset('images/TeamPicture/ProfileIcon_03.png')); ?>')">
                 </div>
                 <div data-aos="flip-right" class="card rounded-lg grid grid-rows-3 gap-4"
-                    style="background-image: url('<?php echo e(asset('images/about/Foto Tim/Example.jpg')); ?>')">
-                </div>
-
-                <div data-aos="flip-right" class="card rounded-lg grid grid-rows-3 gap-4"
-                    style="background-image: url('<?php echo e(asset('images/about/Foto Tim/Example.jpg')); ?>')">
-                </div>
-                <div data-aos="flip-right" class="card rounded-lg grid grid-rows-3 gap-4"
-                    style="background-image: url('<?php echo e(asset('images/about/Foto Tim/Example.jpg')); ?>')">
-                </div>
-                <div data-aos="flip-right" class="card rounded-lg grid grid-rows-3 gap-4"
-                    style="background-image: url('<?php echo e(asset('images/about/Foto Tim/Example.jpg')); ?>')">
-                </div>
-                <div data-aos="flip-right" class="card rounded-lg grid grid-rows-3 gap-4"
-                    style="background-image: url('<?php echo e(asset('images/about/Foto Tim/Example.jpg')); ?>')">
+                style="background-image: url('<?php echo e(asset('images/TeamPicture/ProfileIcon_04.png')); ?>')">
                 </div>
 
                 <div data-aos="flip-right" class="card rounded-lg grid grid-rows-3 gap-4"
-                    style="background-image: url('<?php echo e(asset('images/about/Foto Tim/Example.jpg')); ?>')">
+                style="background-image: url('<?php echo e(asset('images/TeamPicture/ProfileIcon_05.png')); ?>')">
                 </div>
                 <div data-aos="flip-right" class="card rounded-lg grid grid-rows-3 gap-4"
-                    style="background-image: url('<?php echo e(asset('images/about/Foto Tim/Example.jpg')); ?>')">
+                style="background-image: url('<?php echo e(asset('images/TeamPicture/ProfileIcon_06.png')); ?>')">
                 </div>
                 <div data-aos="flip-right" class="card rounded-lg grid grid-rows-3 gap-4"
-                    style="background-image: url('<?php echo e(asset('images/about/Foto Tim/Example.jpg')); ?>')">
+                style="background-image: url('<?php echo e(asset('images/TeamPicture/ProfileIcon_07.png')); ?>')">
                 </div>
                 <div data-aos="flip-right" class="card rounded-lg grid grid-rows-3 gap-4"
-                    style="background-image: url('<?php echo e(asset('images/about/Foto Tim/Example.jpg')); ?>')">
+                style="background-image: url('<?php echo e(asset('images/TeamPicture/ProfileIcon_08.png')); ?>')">
+                </div>
+
+                <div data-aos="flip-right" class="card rounded-lg grid grid-rows-3 gap-4"
+                style="background-image: url('<?php echo e(asset('images/TeamPicture/ProfileIcon_09.png')); ?>')">
+                </div>
+                <div data-aos="flip-right" class="card rounded-lg grid grid-rows-3 gap-4"
+                style="background-image: url('<?php echo e(asset('images/TeamPicture/ProfileIcon_10.png')); ?>')">
+                </div>
+                <div data-aos="flip-right" class="card rounded-lg grid grid-rows-3 gap-4"
+                style="background-image: url('<?php echo e(asset('images/TeamPicture/ProfileIcon_11.png')); ?>')">
+                </div>
+                <div data-aos="flip-right" class="card rounded-lg grid grid-rows-3 gap-4"
+                style="background-image: url('<?php echo e(asset('images/TeamPicture/ProfileIcon_01.png')); ?>')">
                 </div>
             </div>
         </center>
