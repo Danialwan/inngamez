@@ -7,7 +7,7 @@
             <h1>COLLABORATE!</h1>
         </div>
         <div class="flex justify-center items-center">
-            <a class="btn-colaborate" href="">START</a>
+            <a class="btn-colaborate" href="/contact">START</a>
         </div>
     </div>
 </section>

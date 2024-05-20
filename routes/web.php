@@ -65,13 +65,29 @@ Route::get('admin/about', function () {
 //     return view('admin.contact');
 // });
 Route::get('/login', function () {
-    return view('login');
+    $instagram = Contact::where('title',"Instagram")->first();
+    $linkedin = Contact::where('title',"Linkedin")->first();
+    $Facebook = Contact::where('title',"Facebook")->first();
+    $Youtube = Contact::where('title',"Youtube")->first();
+    $data= [
+        "instagram" => $instagram,
+        "linkedin" => $linkedin,
+        "facebook" => $Facebook,
+        "youtube" => $Youtube
+    ];
+    return view('login')->with($data);
 });
 
 Route::resource('news', NewsController::class);
 Route::get('admin/news', [NewsController::class, 'admin']);
+Route::match(['put', 'patch'], 'news/{news}/updateImage', [NewsController::class, 'updateImage']);
+Route::match(['put', 'patch'], 'news/{news}/updateTitle', [NewsController::class, 'updateTitle']);
+Route::match(['put', 'patch'], 'news/{news}/updateBody', [NewsController::class, 'updateBody']);
+
 Route::get('news/create', [NewsController::class, 'create']);
 // Route::get('news/{news}', [NewsController::class, 'show']);
+
+Route::resource('message', MessageController::class);
 
 Route::resource('contact', ContactController::class);
 Route::get('admin/contact', [ContactController::class, 'create']);

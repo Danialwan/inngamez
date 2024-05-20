@@ -35,10 +35,15 @@
             <div class="newsContainer grid md:grid-cols-2 gap-10 px-8 py-5 xl:grid-cols-4 gap-10 text-center px-40">
                 @foreach ($news as $item)
                     <div class="news" href="">
-                        <div data-aos="flip-right" class="card rounded-lg flex justify-end items-start"
-                        style="background-image: url('{{ asset('images/about/Foto Tim/Example.jpg') }}')">
+                        <div data-aos="flip-right" class="card rounded-lg flex flex-col justify-between items-end h-full"
+                        style="background-image: url('{{ asset('images/NewsImages/'.$item->image) }}')">
                         {{-- <a class="delete" href=""></a> --}}
                         <a class="edit" href="{{'/news/'.$item->id.'/edit'}}"></a>
+                        <form class="" action="{{'/news/'.$item->id }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" style="border: none" class="delete"></button>
+                        </form>
                         </div>
                         <div class="newsText mt-4">
                             <b class="newsTitle">{{ Illuminate\Support\Str::of($item->title)->limit(40) }}</b>

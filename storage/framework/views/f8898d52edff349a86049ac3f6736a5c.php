@@ -10,14 +10,14 @@
     <div class="socialMedia">
         <b>SOCIAL MEDIA</b>
         <div class="flex gap-4 mt-4">
-            <a href=""><img width="30" src="<?php echo e(asset('images/icon/instagram.svg')); ?>" alt=""></a>
-            <a href=""><img width="30" src="<?php echo e(asset('images/icon/facebook.svg')); ?>" alt=""></a>
-            <a href=""><img width="30" src="<?php echo e(asset('images/icon/youtube.svg')); ?>" alt=""></a>
-            <a href=""><img width="30" src="<?php echo e(asset('images/icon/linkedin.svg')); ?>" alt=""></a>
+            <a href="<?php echo e($instagram->link); ?>"><img width="30" src="<?php echo e(asset('images/icon/instagram.svg')); ?>" alt=""></a>
+            <a href="<?php echo e($facebook->link); ?>"><img width="30" src="<?php echo e(asset('images/icon/facebook.svg')); ?>" alt=""></a>
+            <a href="<?php echo e($youtube->link); ?>"><img width="30" src="<?php echo e(asset('images/icon/youtube.svg')); ?>" alt=""></a>
+            <a href="<?php echo e($linkedin->link); ?>"><img width="30" src="<?php echo e(asset('images/icon/linkedin.svg')); ?>" alt=""></a>
         </div>
     </div>
 </footer>
 <div class="copyright flex justify-center p-5">
-    <a href="/login">© 2024 INNGAMEZ STUDIO. ALL RIGHT RESERVED</a>
+    <a class="loginBtn" href="/login">© </a> 2024 INNGAMEZ STUDIO. ALL RIGHT RESERVED
 </div>
 <?php /**PATH E:\Project\Website\inngamez\resources\views/layouts/footer.blade.php ENDPATH**/ ?>

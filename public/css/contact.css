@@ -231,5 +231,21 @@ header {
     .tableMessageSmall{
         display: block;
     }
-
+    .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+    }
+    .ModalBtn{
+        margin-top: 1vh;
+        padding: 1vh;
+        border: 1px solid black;
+        font-size: 1rem;
+    }
+    .ModalBtn:hover{
+        background-color: black;
+        color: white;
+    }
 }

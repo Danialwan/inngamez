@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\Message;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class MessageController extends Controller
 {
@@ -29,7 +31,29 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // return $request->message;
+        Session::flash('message', $request->message);
+        Session::flash('name', $request->name);
+        Session::flash('email', $request->email);
+
+        $request -> validate([
+            'message' => 'required',
+            'name' => 'required',
+            'email' => 'required'
+        ],[
+            'message.required' => 'pesan wajib di isi',
+            'name.required' => 'nama wajib di isi',
+            'email.required' => 'email wajib di isi',
+        ]);
+
+        $data = [
+            'message' => $request->input('message'),
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+        ];
+
+        Message::Create($data);
+        return redirect('/contact')->with('success','Berhasil memasukan data');
     }
 
     /**

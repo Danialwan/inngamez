@@ -18,7 +18,7 @@
                             <input type="text" name="link" id="link" autocomplete="given-name"
                                 class="mt-2 block w-full rounded-md border-0 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 value="{{ $instagram->link }}" required>
-                            <div class="flex w-full justify-between mt-4">
+                            <div class="flex flex-col w-full justify-between mt-4 xl:flex-row">
                                 <p style="font-size: 1rem; color: red">Pastikan kembali link url yang anda masukan telah
                                     sesuai!</p>
                                 <button class="btn ModalBtn rounded-lg" type="submit">Save</button>
@@ -48,7 +48,7 @@
                             <input type="text" name="link" id="link" autocomplete="given-name"
                                 class="mt-2 block w-full rounded-md border-0 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 value="{{ $linkedin->link }}">
-                            <div class="flex w-full justify-between mt-4">
+                            <div class="flex flex-col w-full justify-between mt-4 xl:flex-row">
                                 <p style="font-size: 1rem; color: red">Pastikan kembali link url yang anda masukan telah
                                     sesuai!</p>
                                 <button class="btn ModalBtn rounded-lg" type="submit">Save</button>
@@ -78,7 +78,7 @@
                             <input type="text" name="link" id="link" autocomplete="given-name"
                                 class="mt-2 block w-full rounded-md border-0 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 value="{{ $facebook->link }}">
-                            <div class="flex w-full justify-between mt-4">
+                            <div class="flex flex-col w-full justify-between mt-4 xl:flex-row">
                                 <p style="font-size: 1rem; color: red">Pastikan kembali link url yang anda masukan telah
                                     sesuai!</p>
                                 <button class="btn ModalBtn rounded-lg" type="submit">Save</button>
@@ -108,7 +108,7 @@
                             <input type="text" name="link" id="link" autocomplete="given-name"
                                 class="mt-2 block w-full rounded-md border-0 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 value="{{ $youtube->link }}">
-                            <div class="flex w-full justify-between mt-4">
+                            <div class="flex flex-col w-full justify-between mt-4 xl:flex-row">
                                 <p style="font-size: 1rem; color: red">Pastikan kembali link url yang anda masukan telah
                                     sesuai!</p>
                                 <button class="btn ModalBtn rounded-lg" type="submit">Save</button>

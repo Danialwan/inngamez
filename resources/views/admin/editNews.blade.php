@@ -8,8 +8,8 @@
     <div class="containerDetailNews flex flex-col justify-center items-center md:pt-20 xl:pt-40 p-10">
         <div class="grid md:grid-col-1 xl:grid-cols-3 xl:px-10">
             <div class="pb-10 xl:pe-10 xl:col-span-2 xl:pb-0">
-                <div class="DetailNewsImage m-10 flex justify-end">
-                    <img src="{{ asset('images/news/news1.jpg') }}" alt="">
+                <div class="DetailNewsImage m-10 flex justify-start">
+                    <img src="{{ asset('images/NewsImages/'.$news->image) }}" alt="">
                     <button id="EditImageBtn" class="editNews editImage absolute"></button>
                 </div>
                 <div class="boxEditNews p-3 flex justify-between">
@@ -17,7 +17,7 @@
                     <button id="EditTitleBtn" class="editNews editImage"></button>
                 </div>
                 <div class="boxEditNews p-3">
-                    <button id="EditBodyBtn" class="editNews editImage m-2 float-right"></button>
+                    <button id="EditBodyBtn" class="editNews editImage float-right"></button>
                     <p class="body">{{$news->body}}</p>
                 </div>
             </div>
@@ -26,55 +26,22 @@
                     <b>Berita Lain:</b>
                 </div>
                 @foreach ($recommendation as $item)
-                <a class="Rekomendasi grid grid-cols-3 gap-3" href="">
+                <a class="Rekomendasi grid grid-cols-3 gap-3 flex items-center" href="{{'/news/'.$item->id}}">
                     <div class="image rounded-lg"></div>
                     <div class="col-span-2">
                         <b>{{$item->title}}</b>
                         <p class="newsDate hidden md:block xl:hidden">{{$item->created_at}}</p>
-                        <p class="newsBody mt-3 hidden md:block xl:block">
+                        <p class="newsBody mt-3 hidden md:block xl:hidden">
                             {{ Illuminate\Support\Str::of($item->title)->limit(80) }}
                         </p>
                     </div>
                 </a>
                 @endforeach
                 {{ $recommendation->links('vendor.pagination.tailwind') }}
-                {{-- <a class="Rekomendasi grid grid-cols-3 gap-3" href="">
-                    <div class="image rounded-lg"></div>
-                    <div class="col-span-2">
-                        <b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid eaque</b>
-                        <p class="newsDate hidden md:block xl:hidden">2024-05-09 15:45:33</p>
-                        <p class="newsBody mt-3 hidden md:block xl:hidden">
-                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                            alter...
-                        </p>
-                    </div>
-                </a>
-                <a class="Rekomendasi grid grid-cols-3 gap-3" href="">
-                    <div class="image rounded-lg"></div>
-                    <div class="col-span-2">
-                        <b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid eaque</b>
-                        <p class="newsDate hidden md:block xl:hidden">2024-05-09 15:45:33</p>
-                        <p class="newsBody mt-3 hidden md:block xl:hidden">
-                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                            alter...
-                        </p>
-                    </div>
-                </a>
-                <a class="Rekomendasi grid grid-cols-3 gap-3" href="">
-                    <div class="image rounded-lg"></div>
-                    <div class="col-span-2">
-                        <b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid eaque</b>
-                        <p class="newsDate hidden md:block xl:hidden">2024-05-09 15:45:33</p>
-                        <p class="newsBody mt-3 hidden md:block xl:hidden">
-                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                            alter...
-                        </p>
-                    </div>
-                </a> --}}
             </div>
         </div>
         <div data-aos="fade-right" class="BackButton flex justify-start items-center p-10">
-            <a class="back" href="/news"></a>
+            <a class="back" href="/admin/news"></a>
         </div>
     </div>
     @include('component.newsEditModal')

@@ -7,7 +7,8 @@
 @section('content')
     <div class="containerCreateNews flex flex-col justify-center items-center">
         <div data-aos="fade-right" class="ContainerForm grid py-32 md:grid-cols-1 md:py-40 md:px-10 md:pb-0 xl:grid-cols-3 xl:p-40 pb-0">
-            <form class="xl:col-span-2 px-10" action="" class="formCreate">
+            <form method="POST" class="xl:col-span-2 px-10" action="{{'/news'}}" class="formCreate" enctype="multipart/form-data">
+                @csrf
                 <div class="mb-10">
                     <b class="title">FORUM PEMBUATAN BERITA</b>
                     <p>Pada halaman ini anda dapat menambahkan berita, berita akan ditampilkan pada halaman user.</p>
@@ -16,7 +17,7 @@
                     <label for="newsTitle" class="block text-sm font-medium leading-6 text-white">Judul Berita</label>
                     <div class="mt-2">
                         <input type="text" name="newsTitle" id="newsTitle" autocomplete="given-name"
-                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            class="block w-full rounded-md border-0 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                     </div>
                 </div>
                 <div class="col-span-full mt-3">
@@ -30,7 +31,7 @@
                 <div class="col-span-full mt-3">
                     <label for="cover-photo" class="block text-sm font-medium leading-6 text-white">Cover photo</label>
                     <label id="dropArea" class="dropArea mt-2 flex justify-center rounded-lg border border-dashed border-white/25 px-6 py-10" for="inputFile">
-                        <input type="file" accept="image/*" id="inputFile" hidden>
+                        <input type="file" accept="image/*" id="inputFile" name="image" hidden>
                         {{-- <input id="file-upload" name="file-upload" type="file" class="sr-only"> --}}
                         <div class="text-center" id="textLabel">
                             <svg class="mx-auto h-12 w-12 text-gray-300" viewBox="0 0 24 24" fill="currentColor"
@@ -46,7 +47,7 @@
                                 </label>
                                 <p class="pl-1">or drag and drop</p>
                             </div>
-                            <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
+                            <p class="text-xs leading-5 text-gray-600">PNG, JPG, JPEG up to 10MB</p>
                         </div>
                     </label>
                 </div>

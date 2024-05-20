@@ -5,17 +5,20 @@ header {
     background-size: 100%;
     background-position: center;
 }
-.containerCreateNews{
+
+.containerCreateNews {
     background-color: rgb(0, 0, 0);
     width: 100%;
     /* height: 100vh; */
     color: white;
 }
-.containerDetailNews{
+
+.containerDetailNews {
     background-color: rgb(0, 0, 0);
     width: 100%;
     color: white;
 }
+
 .content {
     margin-top: 28vh;
     margin-left: 15vw;
@@ -51,7 +54,6 @@ header {
 .UpdateFromUs .newsContainer .card {
     background-color: #ffffff;
     /* filter: grayscale(100); */
-    justify-self: center;
     width: 100%;
     height: 25vw;
     background-position: center;
@@ -120,19 +122,39 @@ header {
     background-color: rgb(255, 255, 255);
     background-image: url('../images/icon/edit_black.svg');
 }
-.formCreate{
+
+.delete {
+    border-radius: 40px 0px 5px 0px ;
+    padding: 1.5rem;
+    background-color: transparent;
+    background-image: url('../images/icon/delete_white.svg');
+    background-position: 15px 12px;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+
+.delete:hover {
+    background-color: rgb(255, 94, 94);
+    background-image: url('../images/icon/delete_black.svg');
+}
+
+.formCreate {
     width: 30vw;
 }
-.RightContainerCreateNews{
+
+.RightContainerCreateNews {
     border-left: 1px solid white;
 }
-.ContainerForm{
+
+.ContainerForm {
     width: 100%;
 }
-.BackButton{
+
+.BackButton {
     width: 100%;
 }
-.back{
+
+.back {
     width: 6vh;
     height: 6vh;
     /* background-color: #ffffff; */
@@ -141,48 +163,58 @@ header {
     background-size: 100%;
     background-repeat: no-repeat;
 }
-.submit{
+
+.submit {
     color: black;
     padding: 0.5vh 6vh;
     background-color: white;
     font-weight: bold;
     float: right;
 }
-.submit:hover{
+
+.submit:hover {
     color: white;
     background-color: black;
     border: 1px solid white;
 }
-form .title{
+
+form .title {
     color: white;
     font-size: 2rem;
     font-weight: 600;
 }
-.RightContainerCreateNews .title{
+
+.RightContainerCreateNews .title {
     color: white;
     font-size: 1rem;
     font-weight: 500;
     text-transform: uppercase;
 }
-.DetailNewsImage{
+
+.DetailNewsImage {
     max-width: 100%;
     max-height: auto;
 }
-.containerDetailNews .title{
+
+.containerDetailNews .title {
     color: white;
     font-size: 2rem;
     font-weight: 600;
 }
-.DetailNewsImage img{
-    border:  1px solid white;
+
+.DetailNewsImage img {
+    border: 1px solid white;
 }
-.ContainerRight{
+
+.ContainerRight {
     border-left: 1px solid white;
 }
-.ContainerRight .Rekomendasi{
+
+.ContainerRight .Rekomendasi {
     /* height: 20vh; */
 }
-.ContainerRight .Rekomendasi .image{
+
+.ContainerRight .Rekomendasi .image {
     width: auto;
     height: 15vh;
     background-color: white;
@@ -205,7 +237,8 @@ button.editNews:hover {
     background-color: white;
     color: black;
 }
-.boxEditNews{
+
+.boxEditNews {
     border: 1px solid white;
 }
 
@@ -252,25 +285,33 @@ button.editNews:hover {
     text-decoration: none;
     cursor: pointer;
 }
-.ModalBtn{
+
+.ModalBtn {
     padding: 0.5vh 4vh;
     border: 1px solid black;
     font-size: 1rem;
 }
-.ModalBtn:hover{
+
+.ModalBtn:hover {
     background-color: black;
     color: white;
 }
-.modal .title{
+
+.modal .title {
     font-size: 1.2rem;
     font-weight: bold;
     color: black;
 }
-.oldImage{
+
+.oldImage {
     background-color: black;
-    width: 20vh;
-    height: 20vh;
+    width: 30vh;
+    height: 30vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
 .dropzone {
     background: #e3e6ff;
     border-radius: 13px;
@@ -280,14 +321,16 @@ button.editNews:hover {
     border: 2px dotted #1833FF;
     margin-top: 50px;
 }
-.dropArea{
+
+.dropArea {
     width: 50%;
-    height: 20vh;
+    height: 25vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-.dropAreaEdit{
+
+.dropAreaEdit {
     width: 30vh;
     height: 20vh;
     background-position: center;
@@ -295,6 +338,7 @@ button.editNews:hover {
     background-size: cover;
     background-color: #000;
 }
+
 /* .delete{
     border-radius: 0px 5px 40px 0px ;
     padding: 1.5rem;
@@ -308,6 +352,12 @@ button.editNews:hover {
     background-color: rgb(255, 255, 255);
     background-image: url('../images/icon/delete_black.svg');
 } */
+#textLabel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 @media screen and (max-width: 992px) {
     .edit {
         /* position: absolute; */
@@ -359,16 +409,20 @@ button.editNews:hover {
         height: 40vh;
         padding: 4rem;
     }
-    .RightContainerCreateNews{
+
+    .RightContainerCreateNews {
         border-left: none;
         border-top: 1px solid white;
         margin-top: 5vh;
         padding-top: 3vh;
     }
-    .BackButton, .BackButton .back{
+
+    .BackButton,
+    .BackButton .back {
         display: none;
     }
-    .ContainerRight{
+
+    .ContainerRight {
         border-left: none;
         border-top: 1px solid white;
     }
@@ -424,13 +478,35 @@ button.editNews:hover {
         height: 70vw;
         padding: 4rem;
     }
-    .ContainerRight .Rekomendasi .image{
+
+    .ContainerRight .Rekomendasi .image {
         height: 12vh;
     }
-    .dropArea{
+
+    .dropArea {
         width: 100%;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+    }
+
+    .ModalBtn {
+        margin-top: 1vh;
+        padding: 1vh;
+        border: 1px solid black;
+        font-size: 1rem;
+    }
+
+    .ModalBtn:hover {
+        background-color: black;
+        color: white;
     }
 }
