@@ -10,13 +10,13 @@
     <div class="socialMedia">
         <b>SOCIAL MEDIA</b>
         <div class="flex gap-4 mt-4">
-            <a href=""><img width="30" src="{{ asset('images/icon/instagram.svg') }}" alt=""></a>
-            <a href=""><img width="30" src="{{ asset('images/icon/facebook.svg') }}" alt=""></a>
-            <a href=""><img width="30" src="{{ asset('images/icon/youtube.svg') }}" alt=""></a>
-            <a href=""><img width="30" src="{{ asset('images/icon/linkedin.svg') }}" alt=""></a>
+            <a href="{{$instagram->link}}"><img width="30" src="{{ asset('images/icon/instagram.svg') }}" alt=""></a>
+            <a href="{{$facebook->link}}"><img width="30" src="{{ asset('images/icon/facebook.svg') }}" alt=""></a>
+            <a href="{{$youtube->link}}"><img width="30" src="{{ asset('images/icon/youtube.svg') }}" alt=""></a>
+            <a href="{{$linkedin->link}}"><img width="30" src="{{ asset('images/icon/linkedin.svg') }}" alt=""></a>
         </div>
     </div>
 </footer>
 <div class="copyright flex justify-center p-5">
-    <a href="/login">© 2024 INNGAMEZ STUDIO. ALL RIGHT RESERVED</a>
+    <a class="loginBtn" href="/login">© </a> 2024 INNGAMEZ STUDIO. ALL RIGHT RESERVED
 </div>

@@ -271,6 +271,30 @@ button.editNews:hover {
     width: 20vh;
     height: 20vh;
 }
+.dropzone {
+    background: #e3e6ff;
+    border-radius: 13px;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px dotted #1833FF;
+    margin-top: 50px;
+}
+.dropArea{
+    width: 50%;
+    height: 20vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.dropAreaEdit{
+    width: 30vh;
+    height: 20vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #000;
+}
 /* .delete{
     border-radius: 0px 5px 40px 0px ;
     padding: 1.5rem;
@@ -402,5 +426,11 @@ button.editNews:hover {
     }
     .ContainerRight .Rekomendasi .image{
         height: 12vh;
+    }
+    .dropArea{
+        width: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 }

@@ -19,6 +19,9 @@ background-repeat: no-repeat;
 background-size: 100%;
 border: 1px solid white;
 }
+.loginBtn{
+    cursor: default
+}
 @media screen and (max-width: 768px) {
     footer .footerText{
         border-right: 0px solid rgb(255, 255, 255);

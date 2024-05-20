@@ -7,16 +7,56 @@ use App\Models\Contact;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('home');
+    $instagram = Contact::where('title',"Instagram")->first();
+    $linkedin = Contact::where('title',"Linkedin")->first();
+    $Facebook = Contact::where('title',"Facebook")->first();
+    $Youtube = Contact::where('title',"Youtube")->first();
+    $data= [
+        "instagram" => $instagram,
+        "linkedin" => $linkedin,
+        "facebook" => $Facebook,
+        "youtube" => $Youtube
+    ];
+    return view('home')->with($data);
 });
 Route::get('admin/home', function () {
-    return view('admin.home');
+    $instagram = Contact::where('title',"Instagram")->first();
+    $linkedin = Contact::where('title',"Linkedin")->first();
+    $Facebook = Contact::where('title',"Facebook")->first();
+    $Youtube = Contact::where('title',"Youtube")->first();
+    $data= [
+        "instagram" => $instagram,
+        "linkedin" => $linkedin,
+        "facebook" => $Facebook,
+        "youtube" => $Youtube
+    ];
+    return view('admin.home')->with($data);
 });
 Route::get('about', function () {
-    return view('about');
+    $instagram = Contact::where('title',"Instagram")->first();
+    $linkedin = Contact::where('title',"Linkedin")->first();
+    $Facebook = Contact::where('title',"Facebook")->first();
+    $Youtube = Contact::where('title',"Youtube")->first();
+    $data= [
+        "instagram" => $instagram,
+        "linkedin" => $linkedin,
+        "facebook" => $Facebook,
+        "youtube" => $Youtube
+    ];
+    return view('about')->with($data);
 });
 Route::get('admin/about', function () {
-    return view('admin.about');
+    $instagram = Contact::where('title',"Instagram")->first();
+    $linkedin = Contact::where('title',"Linkedin")->first();
+    $Facebook = Contact::where('title',"Facebook")->first();
+    $Youtube = Contact::where('title',"Youtube")->first();
+    $data= [
+        "instagram" => $instagram,
+        "linkedin" => $linkedin,
+        "facebook" => $Facebook,
+        "youtube" => $Youtube
+    ];
+    return view('admin.about')->with($data);
 });
 // Route::get('/admin/news', function () {
 //     return view('admin.news');

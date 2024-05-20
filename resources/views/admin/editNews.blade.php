@@ -13,31 +13,32 @@
                     <button id="EditImageBtn" class="editNews editImage absolute"></button>
                 </div>
                 <div class="boxEditNews p-3 flex justify-between">
-                    <b class="title">Lorem, ipsum dolor.</b>
+                    <b class="title">{{$news->title}}</b>
                     <button id="EditTitleBtn" class="editNews editImage"></button>
                 </div>
                 <div class="boxEditNews p-3">
-                    <button id="EditBodyBtn" class="editNews editImage m-2 float-right"
-                        href="{{ '/news/' . $news->id }}"></button>
-                    <p class="body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid eaque iste laborum!
-                        Odit
-                        explicabo libero laborum nisi maiores nihil repellat, ut accusamus sunt ratione rerum nesciunt
-                        repudiandae quibusdam nobis voluptatibus dolorum, velit eveniet amet. Cum quae repudiandae,
-                        recusandae
-                        similique fugit dolores ex non deleniti dolore veniam eveniet sed soluta illo, dolor neque sapiente,
-                        iste autem? Voluptatibus sint eum quae voluptate dicta dolor quas deserunt, veritatis ab natus
-                        temporibus repellat reprehenderit praesentium libero voluptatem alias minus quisquam consectetur
-                        numquam
-                        cumque rerum accusantium a inventore est? Perspiciatis a excepturi quod consequuntur atque ullam,
-                        quas
-                        minus molestiae aliquam quia, minima officiis deleniti? Molestias?</p>
+                    <button id="EditBodyBtn" class="editNews editImage m-2 float-right"></button>
+                    <p class="body">{{$news->body}}</p>
                 </div>
             </div>
             <div class="ContainerRight flex flex-col pt-10 xl:p-10 xl:pt-0 gap-4">
                 <div class="mb-5 xl:pb-0">
                     <b>Berita Lain:</b>
                 </div>
+                @foreach ($recommendation as $item)
                 <a class="Rekomendasi grid grid-cols-3 gap-3" href="">
+                    <div class="image rounded-lg"></div>
+                    <div class="col-span-2">
+                        <b>{{$item->title}}</b>
+                        <p class="newsDate hidden md:block xl:hidden">{{$item->created_at}}</p>
+                        <p class="newsBody mt-3 hidden md:block xl:block">
+                            {{ Illuminate\Support\Str::of($item->title)->limit(80) }}
+                        </p>
+                    </div>
+                </a>
+                @endforeach
+                {{ $recommendation->links('vendor.pagination.tailwind') }}
+                {{-- <a class="Rekomendasi grid grid-cols-3 gap-3" href="">
                     <div class="image rounded-lg"></div>
                     <div class="col-span-2">
                         <b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid eaque</b>
@@ -69,18 +70,7 @@
                             alter...
                         </p>
                     </div>
-                </a>
-                <a class="Rekomendasi grid grid-cols-3 gap-3" href="">
-                    <div class="image rounded-lg"></div>
-                    <div class="col-span-2">
-                        <b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid eaque</b>
-                        <p class="newsDate hidden md:block xl:hidden">2024-05-09 15:45:33</p>
-                        <p class="newsBody mt-3 hidden md:block xl:hidden">
-                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                            alter...
-                        </p>
-                    </div>
-                </a>
+                </a> --}}
             </div>
         </div>
         <div data-aos="fade-right" class="BackButton flex justify-start items-center p-10">
@@ -89,7 +79,28 @@
     </div>
     @include('component.newsEditModal')
     {{-- @include('layouts.colaborate') --}}
+    <script>
+        const dropArea = document.getElementById("dropArea");
+        const inputFile = document.getElementById("inputFile");
+        const textLabel = document.getElementById("textLabel");
 
+        inputFile.addEventListener("change", uploadImage);
+
+        function uploadImage(){
+            let imgLink = URL.createObjectURL(inputFile.files[0]);
+            dropArea.style.backgroundImage = `url(${imgLink})`;
+            textLabel.style.display = 'none';
+        }
+
+        dropArea.addEventListener("dragover", function(e){
+            e.preventDefault();
+        });
+        dropArea.addEventListener("drop", function(e){
+            e.preventDefault();
+            inputFile.files = e.dataTransfer.files;
+            uploadImage();
+        })
+    </script>
     <script>
         // Get the modal
         var editImageModal = document.getElementById("editImageModal");

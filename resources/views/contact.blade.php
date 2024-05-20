@@ -27,28 +27,28 @@
                         <p>Stay connected with us</p>
                     </div>
                     <ul class="flex flex-col gap-2">
-                        <a href="">
+                        <a href="{{$instagram->link}}">
                             <li class="flex gap-4"><img width="30" src="{{ asset('images/icon/instagram.svg') }}"
                                     alt="">
-                                <p>@Inngamez</p>
+                                <p>{{$instagram->contact}}</p>
                             </li>
                         </a>
-                        <a href="">
+                        <a href="{{$linkedin->link}}">
                             <li class="flex gap-4"><img width="30" src="{{ asset('images/icon/Linkedin.svg') }}"
                                     alt="">
-                                <p>Inngamez</p>
+                                <p>{{$linkedin->contact}}</p>
                             </li>
                         </a>
-                        <a href="">
+                        <a href="{{$facebook->link}}">
                             <li class="flex gap-4"><img width="30" src="{{ asset('images/icon/Facebook.svg') }}"
                                     alt="">
-                                <p>Inngamez</p>
+                                <p>{{$facebook->contact}}</p>
                             </li>
                         </a>
-                        <a href="">
+                        <a href="{{$youtube->link}}">
                             <li class="flex gap-4"><img width="30" src="{{ asset('images/icon/Youtube.svg') }}"
                                     alt="">
-                                <p>Inngamez</p>
+                                <p>{{$youtube->contact}}</p>
                             </li>
                         </a>
                     </ul>

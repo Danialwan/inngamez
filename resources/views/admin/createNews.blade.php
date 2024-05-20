@@ -13,24 +13,26 @@
                     <p>Pada halaman ini anda dapat menambahkan berita, berita akan ditampilkan pada halaman user.</p>
                 </div>
                 <div class="col-span-full mt-5">
-                    <label for="first-name" class="block text-sm font-medium leading-6 text-white">Judul Berita</label>
+                    <label for="newsTitle" class="block text-sm font-medium leading-6 text-white">Judul Berita</label>
                     <div class="mt-2">
-                        <input type="text" name="first-name" id="first-name" autocomplete="given-name"
+                        <input type="text" name="newsTitle" id="newsTitle" autocomplete="given-name"
                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                     </div>
                 </div>
                 <div class="col-span-full mt-3">
-                    <label for="about" class="block text-sm font-medium leading-6 text-white">Isi Berita</label>
+                    <label for="newsContent" class="block text-sm font-medium leading-6 text-white">Isi Berita</label>
                     <div class="mt-2">
-                        <textarea id="about" name="about" rows="10"
+                        <textarea id="newsContent" name="newsContent" rows="10"
                             class="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 p-2"></textarea>
                     </div>
                 </div>
 
                 <div class="col-span-full mt-3">
                     <label for="cover-photo" class="block text-sm font-medium leading-6 text-white">Cover photo</label>
-                    <div class="mt-2 flex justify-center rounded-lg border border-dashed border-white/25 px-6 py-10">
-                        <div class="text-center">
+                    <label id="dropArea" class="dropArea mt-2 flex justify-center rounded-lg border border-dashed border-white/25 px-6 py-10" for="inputFile">
+                        <input type="file" accept="image/*" id="inputFile" hidden>
+                        {{-- <input id="file-upload" name="file-upload" type="file" class="sr-only"> --}}
+                        <div class="text-center" id="textLabel">
                             <svg class="mx-auto h-12 w-12 text-gray-300" viewBox="0 0 24 24" fill="currentColor"
                                 aria-hidden="true">
                                 <path fill-rule="evenodd"
@@ -41,13 +43,12 @@
                                 <label for="file-upload"
                                     class="relative cursor-pointer rounded-md bg-black font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
                                     <span>Upload a file</span>
-                                    <input id="file-upload" name="file-upload" type="file" class="sr-only">
                                 </label>
                                 <p class="pl-1">or drag and drop</p>
                             </div>
                             <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
                         </div>
-                    </div>
+                    </label>
                 </div>
 
                 <button class="submit rounded-lg mt-4" type="submit">
@@ -78,5 +79,27 @@
             <a class="back" href="/admin/news"></a>
         </div>
     </div>
+    <script>
+        const dropArea = document.getElementById("dropArea");
+        const inputFile = document.getElementById("inputFile");
+        const textLabel = document.getElementById("textLabel");
+
+        inputFile.addEventListener("change", uploadImage);
+
+        function uploadImage(){
+            let imgLink = URL.createObjectURL(inputFile.files[0]);
+            dropArea.style.backgroundImage = `url(${imgLink})`;
+            textLabel.style.display = 'none';
+        }
+
+        dropArea.addEventListener("dragover", function(e){
+            e.preventDefault();
+        });
+        dropArea.addEventListener("drop", function(e){
+            e.preventDefault();
+            inputFile.files = e.dataTransfer.files;
+            uploadImage();
+        })
+    </script>
     {{-- @include('layouts.colaborate') --}}
 @endsection

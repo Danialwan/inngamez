@@ -13,8 +13,17 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $contact = Contact::all();
-        return view('contact')->with('contact', $contact);
+        $instagram = Contact::where('title',"Instagram")->first();
+        $linkedin = Contact::where('title',"Linkedin")->first();
+        $Facebook = Contact::where('title',"Facebook")->first();
+        $Youtube = Contact::where('title',"Youtube")->first();
+        $data= [
+            "instagram" => $instagram,
+            "linkedin" => $linkedin,
+            "facebook" => $Facebook,
+            "youtube" => $Youtube
+        ];
+        return view('contact')->with($data);
     }
 
     /**
@@ -52,7 +61,18 @@ class ContactController extends Controller
     public function show(string $id)
     {
         $message = Message::where('id', $id)->first();
-        return view('admin.viewMessage')->with('message', $message);
+        $instagram = Contact::where('title',"Instagram")->first();
+        $linkedin = Contact::where('title',"Linkedin")->first();
+        $Facebook = Contact::where('title',"Facebook")->first();
+        $Youtube = Contact::where('title',"Youtube")->first();
+        $data= [
+            'message' => $message,
+            "instagram" => $instagram,
+            "linkedin" => $linkedin,
+            "facebook" => $Facebook,
+            "youtube" => $Youtube
+        ];
+        return view('admin.viewMessage')->with($data);
     }
 
     /**

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -15,31 +16,51 @@ class NewsController extends Controller
     public function index()
     {
         $news = News::all();
-        // $body =  Str::words(News::pluck('body'), 10, '...');
-        // $data = [
-        //     'news' => $news,
-        //     'body' => $body
-        // ];
-        // return $data;
-        return view('news')->with('news', $news);
+        $instagram = Contact::where('title',"Instagram")->first();
+        $linkedin = Contact::where('title',"Linkedin")->first();
+        $Facebook = Contact::where('title',"Facebook")->first();
+        $Youtube = Contact::where('title',"Youtube")->first();
+        $data= [
+            'news' => $news,
+            "instagram" => $instagram,
+            "linkedin" => $linkedin,
+            "facebook" => $Facebook,
+            "youtube" => $Youtube
+        ];
+        return view('news')->with($data);
     }
     public function admin()
     {
         $news = News::all();
-        // $body =  Str::words(News::pluck('body'), 10, '...');
-        // $data = [
-        //     'news' => $news,
-        //     'body' => $body
-        // ];
-        // return $data;
-        return view('admin.news')->with('news', $news);
+        $instagram = Contact::where('title',"Instagram")->first();
+        $linkedin = Contact::where('title',"Linkedin")->first();
+        $Facebook = Contact::where('title',"Facebook")->first();
+        $Youtube = Contact::where('title',"Youtube")->first();
+        $data= [
+            'news' => $news,
+            "instagram" => $instagram,
+            "linkedin" => $linkedin,
+            "facebook" => $Facebook,
+            "youtube" => $Youtube
+        ];
+        return view('admin.news')->with($data);
     }
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        return view('admin.createNews');
+        $instagram = Contact::where('title',"Instagram")->first();
+        $linkedin = Contact::where('title',"Linkedin")->first();
+        $Facebook = Contact::where('title',"Facebook")->first();
+        $Youtube = Contact::where('title',"Youtube")->first();
+        $data= [
+            "instagram" => $instagram,
+            "linkedin" => $linkedin,
+            "facebook" => $Facebook,
+            "youtube" => $Youtube
+        ];
+        return view('admin.createNews')->with($data);
         // return Inertia::render('')
     }
 
@@ -56,7 +77,21 @@ class NewsController extends Controller
      */
     public function show(string $id)
     {
-        return view('newsDetail');
+        $news = News::where('id',$id)->first();
+        $recommendation = $news::paginate(4);
+        $instagram = Contact::where('title',"Instagram")->first();
+        $linkedin = Contact::where('title',"Linkedin")->first();
+        $Facebook = Contact::where('title',"Facebook")->first();
+        $Youtube = Contact::where('title',"Youtube")->first();
+        $data= [
+            'news' => $news,
+            'recommendation' => $recommendation,
+            "instagram" => $instagram,
+            "linkedin" => $linkedin,
+            "facebook" => $Facebook,
+            "youtube" => $Youtube
+        ];
+        return view('newsDetail')->with($data);
     }
 
     /**
@@ -65,7 +100,20 @@ class NewsController extends Controller
     public function edit(string $id)
     {
         $news = News::where('id',$id)->first();
-        return view('admin.editNews')->with('news', $news);
+        $recommendation = $news::paginate(4);
+        $instagram = Contact::where('title',"Instagram")->first();
+        $linkedin = Contact::where('title',"Linkedin")->first();
+        $Facebook = Contact::where('title',"Facebook")->first();
+        $Youtube = Contact::where('title',"Youtube")->first();
+        $data= [
+            'news' => $news,
+            'recommendation' => $recommendation,
+            "instagram" => $instagram,
+            "linkedin" => $linkedin,
+            "facebook" => $Facebook,
+            "youtube" => $Youtube
+        ];
+        return view('admin.editNews')->with($data);
     }
 
     /**
