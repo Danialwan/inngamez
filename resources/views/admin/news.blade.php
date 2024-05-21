@@ -16,17 +16,6 @@
             <img class="w-6" src="{{ asset('images/icon/scrollDown.svg') }}" alt="">
         </a>
     </header>
-    {{-- <section id="aboutDescription" class="aboutDescription flex flex-col items-center md:p-10 xl:p-0">
-        <b data-aos="fade-up" class="mb-10 md:mb-10 mt-10 xl:mb-10">UPDATE FROM US</b>
-        <p data-aos="fade-up" class="z-30 text-center">Our team is a collection of talented, passionate, and dedicated
-            individuals who transform ideas into extraordinary creations. From artists who bring worlds to life with
-            stunning visuals, to designers who craft innovative gameplay mechanics, and writers who create captivating
-            stories, each team member brings their unique contribution to crafting inspiring games. We share a common vision
-            of creating unforgettable experiences for players, and we work together collaboratively and supportively to
-            achieve that goal. With diversity in backgrounds, skills, and perspectives, we form a strong and dynamic team,
-            ready to tackle challenges and create outstanding works together.
-        </p>
-    </section> --}}
     <section class="UpdateFromUs">
         <div data-aos="fade-up" class="title flex justify-center md:mb-10 mt-10 xl:mb-20">
             <h1>UPDATE FROM US</h1>
@@ -36,13 +25,12 @@
                 @foreach ($news as $item)
                     <div class="news" href="">
                         <div data-aos="flip-right" class="card rounded-lg flex flex-col justify-between items-end h-full"
-                        style="background-image: url('{{ asset('images/NewsImages/'.$item->image) }}')">
-                        {{-- <a class="delete" href=""></a> --}}
-                        <a class="edit" href="{{'/news/'.$item->id.'/edit'}}"></a>
-                        <form class="" action="{{'/news/'.$item->id }}" method="POST">
+                            style="background-image: url('{{ asset('images/NewsImages/' . $item->image) }}')">
+                            <a class="edit" href="{{ '/news/' . $item->id . '/edit' }}"></a>
+                            <form onsubmit="return confirm('Apakah anda yakin ingin menghapus berita ini?')" class="" action="{{'/news/'.$item->id }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" style="border: none" class="delete"></button>
+                            <button type="submit" style="border: none" class="delete deleteBtn"></button>
                         </form>
                         </div>
                         <div class="newsText mt-4">
@@ -56,7 +44,36 @@
                     <img class="stroke-1" src="{{ asset('images/icon/plus.svg') }}" alt="">
                 </a>
             </div>
+
+            <!-- The Modal -->
+            <div id="newsModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close newsClose">&times;</span>
+                    <form class="mt-5 flex flex-col items-center w-full" method="POST" action="">
+                        @csrf
+                        <b class="title text-center flex justify-self-center">Update News Body:</b>
+                        <div class="flex flex-col items-start w-full">
+                            <label for="newsContent" class="block text-sm font-medium leading-6 text-white">Isi
+                                Berita</label>
+                            <div class="mt-2 w-full">
+                                <textarea id="newsContent" name="newsContent" rows="10"
+                                    class="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 p-2">
+
+                      </textarea>
+                            </div>
+                            <div class="flex flex-col w-full justify-between mt-4 xl:flex-row">
+                                <p style="font-size: 1rem; color: red">Pastikan kembali isi berita yang anda masukan telah
+                                    sesuai!</p>
+                                <button class="btn ModalBtn rounded-lg" type="submit">Save</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
         </center>
     </section>
+
     @include('layouts.colaborate')
 @endsection

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Contact;
 use App\Models\Message;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class ContactController extends Controller
 {
@@ -31,7 +32,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        $message = Message::paginate(4);
+        $message = Message::orderBy('id','desc')->paginate(4);
         $instagram = Contact::where('title',"Instagram")->first();
         $linkedin = Contact::where('title',"Linkedin")->first();
         $Facebook = Contact::where('title',"Facebook")->first();
@@ -52,7 +53,28 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Session::flash('message', $request->message);
+        Session::flash('name', $request->name);
+        Session::flash('email', $request->email);
+
+        $request -> validate([
+            'message' => 'required',
+            'name' => 'required',
+            'email' => 'required'
+        ],[
+            'message.required' => 'pesan wajib di isi',
+            'name.required' => 'nama wajib di isi',
+            'email.required' => 'email wajib di isi',
+        ]);
+
+        $data = [
+            'message' => $request->input('message'),
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+        ];
+
+        Message::Create($data);
+        return redirect('/contact')->with('messageSuccess','Pesan berhasil dikirim.');
     }
 
     /**
@@ -72,6 +94,10 @@ class ContactController extends Controller
             "facebook" => $Facebook,
             "youtube" => $Youtube
         ];
+        $update = [
+            'read' => 1
+        ];
+        Message::where('id', $id)->update($update);
         return view('admin.viewMessage')->with($data);
     }
 
@@ -102,7 +128,7 @@ class ContactController extends Controller
         ];
         // return 0;
         Contact::where('title','Instagram')->update($data);
-        return redirect('/admin/contact');
+        return redirect('/admin/contact')->with('success','Instagram berhasil diperbarui!');
     }
 
     public function updateLinkedin(Request $request)
@@ -121,7 +147,7 @@ class ContactController extends Controller
         ];
         // return 0;
         Contact::where('title','Linkedin')->update($data);
-        return redirect('/admin/contact');
+        return redirect('/admin/contact')->with('success','Linkedin berhasil diperbarui!');
     }
 
     public function updateFacebook(Request $request)
@@ -140,7 +166,7 @@ class ContactController extends Controller
         ];
         // return 0;
         Contact::where('title','Facebook')->update($data);
-        return redirect('/admin/contact');
+        return redirect('/admin/contact')->with('success','Facebook berhasil diperbarui!');
     }
 
     public function updateYoutube(Request $request)
@@ -159,13 +185,15 @@ class ContactController extends Controller
         ];
         // return 0;
         Contact::where('title','Youtube')->update($data);
-        return redirect('/admin/contact');
+        return redirect('/admin/contact')->with('success','Youtube berhasil diperbarui!');
     }
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-        //
+        // return 0;
+        message::where('id', $id)->delete();
+        return redirect('/admin/contact')->with('delete','Pesan berhasil dihapus!');
     }
 }

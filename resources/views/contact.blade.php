@@ -58,14 +58,14 @@
                         <h1>SEND US MESSAGE</h1>
                         <p>We are always excited to collaborate and create new works. tell us your idea</p>
                     </div>
-                    <form class="messageForm" action="{{'/message'}}" method="POST">
+                    <form class="messageForm" action="{{'/contact'}}" method="POST">
                         @csrf
                         @method('POST')
                         <div class="col-span-full">
                             <div class="mt-2">
                                 <textarea id="about" name="message" rows="3"
                                     class="block w-full rounded-md border-0 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                    placeholder="Message"></textarea>
+                                    placeholder="Message">{{ Session::get('message') }}</textarea>
                             </div>
                         </div>
                         <div class="mt-3 mb-4 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
@@ -73,7 +73,7 @@
                                 <label for="first-name" class="block text-sm font-medium leading-6 text-white">First
                                     name</label>
                                 <div class="mt-2">
-                                    <input type="text" name="name" id="first-name" autocomplete="given-name"
+                                    <input type="text" name="name" id="first-name" autocomplete="given-name" value="{{ Session::get('name') }}"
                                         class="block w-full rounded-md border-0 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                 </div>
                             </div>
@@ -81,7 +81,7 @@
                             <div class="sm:col-span-3">
                                 <label for="last-name" class="block text-sm font-medium leading-6 text-white">email</label>
                                 <div class="mt-2">
-                                    <input type="email" name="email" id="last-name" autocomplete="family-name"
+                                    <input type="email" name="email" id="last-name" autocomplete="family-name" value="{{ Session::get('email') }}"
                                         class="block w-full rounded-md border-0 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                 </div>
                             </div>

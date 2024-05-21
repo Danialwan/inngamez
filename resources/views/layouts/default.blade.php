@@ -21,9 +21,17 @@
     <div>
         @include('layouts.nav')
         <main>
+            @include('component.notification')
             @yield('content')
         </main>
         @include('layouts.footer')
     </div>
+    <script>
+        var SendMessageSuccess = document.getElementById("SendMessageSuccess");
+        var closeMessageSuccess = document.getElementsByClassName("closeMessageSuccess")[0];
+        closeWarning.onclick = function() {
+            SendMessageSuccess.style.display = "none";
+        }
+    </script>
 </body>
 </html>

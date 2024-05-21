@@ -90,23 +90,47 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($message as $items)
-                                        <tr
-                                            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                            <th scope="row"
-                                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                {{ $items->name }}
-                                            </th>
-                                            <td class="px-6 py-4">
-                                                {{ $items->email }}
-                                            </td>
-                                            <td class="px-6 py-4">
-                                                {{Illuminate\Support\Str::of($items->message)->limit(120)}}
-                                            </td>
-                                            <td class="px-6 py-4 text-right">
-                                                <a  href="{{'/contact/'.$items->id}}"
-                                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline" data-toggle="modal" data-target="#viewMessage{{$items->id}}">view</a>
-                                            </td>
-                                        </tr>
+                                        @if ($items->read == 0)
+                                            <tr
+                                                class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                                <th scope="row"
+                                                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                    {{ $items->name }}
+                                                </th>
+                                                <td class="px-6 py-4">
+                                                    {{ $items->email }}
+                                                </td>
+                                                <td class="px-6 py-4">
+                                                    {{ Illuminate\Support\Str::of($items->message)->limit(120) }}
+                                                </td>
+                                                <td class="px-6 py-4 text-right">
+                                                    <a href="{{ '/contact/' . $items->id }}"
+                                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                                        data-toggle="modal"
+                                                        data-target="#viewMessage{{ $items->id }}">view</a>
+                                                </td>
+                                            </tr>
+                                        @else
+                                            <tr
+                                                class="bg-gray-200 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600">
+                                                <th scope="row"
+                                                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                    {{ $items->name }}
+                                                </th>
+                                                <td class="px-6 py-4">
+                                                    {{ $items->email }}
+                                                </td>
+                                                <td class="px-6 py-4">
+                                                    {{ Illuminate\Support\Str::of($items->message)->limit(120) }}
+                                                </td>
+                                                <td class="px-6 py-4 text-right">
+                                                    <a href="{{ '/contact/' . $items->id }}"
+                                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                                        data-toggle="modal"
+                                                        data-target="#viewMessage{{ $items->id }}">view</a>
+                                                </td>
+                                            </tr>
+                                        @endif
                                     @endforeach
                                 </tbody>
                             </table>
@@ -132,11 +156,13 @@
                                         <tr
                                             class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                             <td class="px-6 py-4">
-                                                {{Illuminate\Support\Str::of($items->message)->limit(120)}}
+                                                {{ Illuminate\Support\Str::of($items->message)->limit(120) }}
                                             </td>
                                             <td class="px-6 py-4 text-right">
-                                                <a  href="{{'/contact/'.$items->id}}"
-                                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline" data-toggle="modal" data-target="#viewMessage{{$items->id}}">view</a>
+                                                <a href="{{ '/contact/' . $items->id }}"
+                                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                                    data-toggle="modal"
+                                                    data-target="#viewMessage{{ $items->id }}">view</a>
                                             </td>
                                         </tr>
                                     @endforeach

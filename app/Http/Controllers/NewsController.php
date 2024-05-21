@@ -98,7 +98,7 @@ class NewsController extends Controller
         ];
 
         News::Create($data);
-        return redirect('/admin/news')->with('success','Berhasil memasukan data');
+        return redirect('/admin/news')->with('success','Berita berhasil dibuat!');
     }
 
     /**
@@ -170,7 +170,7 @@ class NewsController extends Controller
         ];
 
         News::where('id', $id)->update($data);
-        return redirect('/admin/news');
+        return redirect('/admin/news')->with('success','Berita berhasil diperbarui!');
     }
 
     public function updateTitle(Request $request, string $id)
@@ -187,7 +187,7 @@ class NewsController extends Controller
         ];
 
         News::where('id', $id)->update($data);
-        return redirect('/admin/news');
+        return redirect('/admin/news')->with('success','Berita berhasil diperbarui!');
     }
 
     public function updateBody(Request $request, string $id)
@@ -203,7 +203,7 @@ class NewsController extends Controller
         ];
 
         News::where('id', $id)->update($data);
-        return redirect('/admin/news');
+        return redirect('/admin/news')->with('success','Berita berhasil diperbarui!');
     }
     /**
      * Remove the specified resource from storage.
@@ -213,6 +213,6 @@ class NewsController extends Controller
         $news = News::where('id', $id)->first();
         File::delete(public_path('images/NewsImages/').'/'.$news->image);
         News::where('id', $id)->delete();
-        return redirect('/admin/news')->with('success','Berhasil menghapus data');
+        return redirect('/admin/news')->with('delete','Berita berhasil dihapus!');
     }
 }

@@ -13,6 +13,7 @@ class Message extends Model
         "name",
         "email",
         "message",
+        "read",
         "create_at",
         "update_at"
     ];

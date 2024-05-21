@@ -21,10 +21,18 @@
     <div>
         <?php echo $__env->make('layouts.nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <main>
+            <?php echo $__env->make('component.error', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             <?php echo $__env->yieldContent('content'); ?>
         </main>
         <?php echo $__env->make('layouts.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     </div>
+    <script>
+        var SendMessageSuccess = document.getElementById("SendMessageSuccess");
+        var closeMessageSuccess = document.getElementsByClassName("closeMessageSuccess")[0];
+        closeWarning.onclick = function() {
+            SendMessageSuccess.style.display = "none";
+        }
+    </script>
 </body>
 </html>
 <?php /**PATH E:\Project\Website\inngamez\resources\views/layouts/default.blade.php ENDPATH**/ ?>

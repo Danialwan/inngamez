@@ -18,6 +18,7 @@ class MessageSeeder extends Seeder
                 'name' => "Yayan",
                 'email' => "Silver@gmail.com",
                 'message' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt tempore totam maxime, ipsa in inventore harum saepe illo similique accusamus.",
+                'read' => 0,
                 'created_at' => date('Y-m-d H:i:s'),
             ]
         );
@@ -26,6 +27,7 @@ class MessageSeeder extends Seeder
                 'name' => "Irwanto",
                 'email' => "White@gmail.com",
                 'message' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt tempore totam maxime, ipsa in inventore harum saepe illo similique accusamus.",
+                'read' => 0,
                 'created_at' => date('Y-m-d H:i:s'),
             ]
         );
@@ -34,6 +36,7 @@ class MessageSeeder extends Seeder
                 'name' => "Ehsan",
                 'email' => "Black@gmail.com",
                 'message' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt tempore totam maxime, ipsa in inventore harum saepe illo similique accusamus.",
+                'read' => 0,
                 'created_at' => date('Y-m-d H:i:s'),
             ]
         );
@@ -42,6 +45,7 @@ class MessageSeeder extends Seeder
                 'name' => "Ehsan2",
                 'email' => "Black@gmail.com",
                 'message' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt tempore totam maxime, ipsa in inventore harum saepe illo similique accusamus.",
+                'read' => 0,
                 'created_at' => date('Y-m-d H:i:s'),
             ]
         );
@@ -50,6 +54,7 @@ class MessageSeeder extends Seeder
                 'name' => "Ehsan3",
                 'email' => "Black@gmail.com",
                 'message' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt tempore totam maxime, ipsa in inventore harum saepe illo similique accusamus.",
+                'read' => 0,
                 'created_at' => date('Y-m-d H:i:s'),
             ]
         );
@@ -58,6 +63,7 @@ class MessageSeeder extends Seeder
                 'name' => "Ehsan4",
                 'email' => "Black@gmail.com",
                 'message' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt tempore totam maxime, ipsa in inventore harum saepe illo similique accusamus.",
+                'read' => 0,
                 'created_at' => date('Y-m-d H:i:s'),
             ]
         );

@@ -87,8 +87,6 @@ Route::match(['put', 'patch'], 'news/{news}/updateBody', [NewsController::class,
 Route::get('news/create', [NewsController::class, 'create']);
 // Route::get('news/{news}', [NewsController::class, 'show']);
 
-Route::resource('message', MessageController::class);
-
 Route::resource('contact', ContactController::class);
 Route::get('admin/contact', [ContactController::class, 'create']);
 Route::match(['put', 'patch'], 'admin/contact/instagram', [ContactController::class, 'updateInstagram']);

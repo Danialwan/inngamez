@@ -20,13 +20,20 @@
             <h1>Message</h1>
         </div>
         <div class="Message py-0 px-10 xl:px-40 pb-10" style="color: white">
-            <p>From : {{$message->name}}</p>
-            <p>Email :{{$message->email}}</p>
+            <p>From : {{ $message->name }}</p>
+            <p>Email :{{ $message->email }}</p>
             <br>
-            <p>{{$message->message}}</p>
+            <p>{{ $message->message }}</p>
         </div>
-        <div data-aos="fade-right" class="BackButton flex justify-start items-center p-10">
-            <a class="back" href="/admin/contact"></a>
+        <div class="BackButton flex justify-between items-center p-10">
+            <a data-aos="fade-right" class="back" href="/admin/contact"></a>
+            {{-- <a data-aos="fade-left" class="back" href="/admin/contact"></a> --}}
+            <form data-aos="fade-left" onsubmit="return confirm('Apakah anda yakin ingin menghapus pesan ini?')"
+                class="" action="{{ '/contact/' . $message->id }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" style="border: none" class="delete deleteBtn"></button>
+            </form>
         </div>
     </section>
 

@@ -21,6 +21,7 @@
     <div>
         @include('layouts.navAdmin')
         <main>
+            @include('component.notification')
             @yield('content')
         </main>
         @include('layouts.footer')
