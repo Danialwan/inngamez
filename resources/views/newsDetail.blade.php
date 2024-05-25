@@ -1,6 +1,6 @@
 <link rel="stylesheet" href={{ asset('css/news.css') }}>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-@extends('layouts.admin')
+@extends('layouts.default')
 
 @section('title', 'Beranda')
 
@@ -20,7 +20,7 @@
                 </div>
                 @foreach ($recommendation as $item)
                 <a class="Rekomendasi grid grid-cols-3 gap-3 flex items-center" href="{{'/news/'.$item->id}}">
-                    <div class="image rounded-lg"></div>
+                    <div class="image rounded-lg" style="background-image: url('{{ asset("images/NewsImages/".$item->image)}}')"></div>
                     <div class="col-span-2">
                         <b>{{$item->title}}</b>
                         <p class="newsDate hidden md:block xl:hidden">{{$item->created_at}}</p>

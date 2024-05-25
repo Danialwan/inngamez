@@ -106,7 +106,10 @@ class ContactController extends Controller
      */
     public function edit(string $id)
     {
-        //
+
+        // Hasil route bekas penerapan make controller use --resource,
+        // Beberapa route yang tidak terpakai akan di redirect ke route admin/home
+        return redirect('admin/home');
     }
 
     /**

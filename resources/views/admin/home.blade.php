@@ -20,73 +20,33 @@
         </a>
     </header>
 
-    <section id="homeDescription" class="homeDescription flex justify-center md:p-10 xl:p-0">
-        <p data-aos="fade-up" class="z-30 text-center">We are a game studio that focuses on limitless creativity, deep
-            experiences, and
-            immersive depth.
-            With a team
-            comprised of bold artists, designers, writers, and developers, we are committed to creating interactive works of
-            art that captivate, taking players on meaningful and satisfying journeys. From stunning visual design to
-            captivating storylines, every title we release is a gateway to boundless alternate realities, inviting players
-            to immerse themselves in unforgettable adventures.</p>
+    <section id="homeDescription" class="homeDescription flex justify-center md:p-10 xl:p-0 ">
+        <p data-aos="fade-up" class="adminEdit z-30 text-center rounded-lg">
+            <button id="editHomeBtn" class="edit"></button>
+            {{$page->text}}
+        </p>
     </section>
     <section class="ourGame">
         <div data-aos="fade-up" class="title flex justify-center md:mb-10 mt-10 xl:mb-20">
             <h1>OUR GAME</h1>
         </div>
         <center>
-            <div data-aos="fade-up"
-                class="gameCard grid md:grid-cols-2 gap-10 xl:grid-cols-4 gap-10 text-center">
-                <div class="wrapper rounded-lg">
-                    <div class="card rounded-lg">
-                        <div class="cardFront rounded-lg"
-                            style="background-image: url('{{ asset('images/home/GameIcon_01.png') }}')"></div>
-                        <div class="cardBack card-1 rounded-lg flex flex-col justify-center items-center">
-                            <b class="mb-3">Lorem, ipsum.</b>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni tempore voluptas unde vero
-                                numquam error beatae aliquid fuga nesciunt excepturi.</p>
-                            <a href="" class="cardBtn rounded-lg mt-4">start</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="wrapper rounded-lg">
-                    <div class="card rounded-lg">
-                        <div class="cardFront rounded-lg"
-                            style="background-image: url('{{ asset('images/home/GameIcon_02.png') }}')"></div>
-                        <div class="cardBack card-2 rounded-lg flex flex-col justify-center items-center">
-                            <b class="mb-3">Lorem, ipsum.</b>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat aut sint cumque assumenda
-                                maiores pariatur et accusantium quisquam odio voluptatibus?</p>
-                            <a href="" class="cardBtn rounded-lg mt-4">start</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="wrapper rounded-lg">
-                    <div class="card rounded-lg">
-                        <div class="cardFront rounded-lg"
-                            style="background-image: url('{{ asset('images/home/GameIcon_04.png') }}')"></div>
-                        <div class="cardBack card-3 rounded-lg flex flex-col justify-center items-center">
-                            <b class="mb-3">Lorem, ipsum.</b>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae natus sit eius suscipit
-                                aut. Exercitationem dolor tempora dolorum distinctio totam?</p>
-                            <a href="" class="cardBtn rounded-lg mt-4">start</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="wrapper rounded-lg">
-                    <div class="card rounded-lg">
-                        <div class="cardFront rounded-lg"
-                            style="background-image: url('{{ asset('images/home/GameIcon_03.png') }}')"></div>
-                        <div class="cardBack card-4 rounded-lg flex flex-col justify-center items-center">
-                            <b class="mb-3">Lorem, ipsum.</b>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci fuga quibusdam, optio vel
-                                incidunt numquam ipsum debitis eum minus ab.</p>
-                            <a href="" class="cardBtn rounded-lg mt-4">start</a>
-                        </div>
-                    </div>
-                </div>
+            <div data-aos="fade-up" class="gameCard grid md:grid-cols-2 gap-10 xl:grid-cols-4 gap-10 text-center">
 
-
+                @foreach ( $game as $item)
+                <div class="wrapper rounded-lg">
+                    <div class="card rounded-lg">
+                        <div class="cardFront rounded-lg"
+                            style="background-image: url('{{ asset('images/gameImage/'.$item->image) }}')"></div>
+                        <div class="cardBack card-1 rounded-lg flex flex-col justify-center items-center"  style="background-image: url('{{ asset('images/gameImage/'.$item->image) }}')">
+                            <a class="edit" href="{{ '/admin/game/'.$item->id }}"></a>
+                            <b class="mb-3 z-10">{{$item->title}}</b>
+                            <p class="z-10">{{Illuminate\Support\Str::of($item->description)->limit(150)}}</p>
+                            <a href="{{$item->link}}" class="cardBtn rounded-lg mt-4 z-10">start</a>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
             </div>
         </center>
     </section>
@@ -98,5 +58,37 @@
             <source src="{{ asset('images/home/Teaser_2_Final.mp4') }}" type="video/mp4">
         </video>
     </section>
+    @include('component.homeModal')
     @include('layouts.colaborate')
+
+
+    <script>
+        // Get the modal
+        var editHomeModal = document.getElementById("editHomeModal");
+
+        // Get the button that opens the modal
+        var editHomeBtn = document.getElementById("editHomeBtn");
+
+        // Get the <span> element that closes the modal
+        var closeEditHome = document.getElementsByClassName("closeEditHome")[0];
+
+
+        // When the user clicks the button, open the modal
+        editHomeBtn.onclick = function() {
+            editHomeModal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        closeEditHome.onclick = function() {
+            editHomeModal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == editHomeModal) {
+                editHomeModal.style.display = "none";
+            }
+        }
+    </script>
+
 @endsection

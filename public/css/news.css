@@ -218,6 +218,10 @@ form .title {
     width: auto;
     height: 15vh;
     background-color: white;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 1px solid white;
 }
 
 button.editNews {

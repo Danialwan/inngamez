@@ -18,13 +18,9 @@
     </header>
     <section id="aboutDescription" class="aboutDescription flex flex-col items-center md:p-10 xl:p-0">
         <b data-aos="fade-up" class="mb-10 md:mb-10 mt-10 xl:mb-10">WHO WE ARE</b>
-        <p data-aos="fade-up" class="z-30 text-center">Our team is a collection of talented, passionate, and dedicated
-            individuals who transform ideas into extraordinary creations. From artists who bring worlds to life with
-            stunning visuals, to designers who craft innovative gameplay mechanics, and writers who create captivating
-            stories, each team member brings their unique contribution to crafting inspiring games. We share a common vision
-            of creating unforgettable experiences for players, and we work together collaboratively and supportively to
-            achieve that goal. With diversity in backgrounds, skills, and perspectives, we form a strong and dynamic team,
-            ready to tackle challenges and create outstanding works together.
+        <p data-aos="fade-up" class="adminEdit z-30 text-center rounded-lg">
+            <button id="editAboutBtn" class="edit"></button>
+            {{$page->text}}
         </p>
     </section>
     <section class="ourTeam">
@@ -32,7 +28,7 @@
             <h1>OUR TEAM</h1>
         </div>
         <center>
-            <div class="gameCard grid md:grid-cols-2 gap-10 px-7 py-5 xl:grid-cols-4 gap-10 text-center px-28">
+            <div class="gameCard grid md:grid-cols-2 gap-10 px-7 py-5 xl:grid-cols-4 gap-10 text-center xl:px-28">
                 <div data-aos="flip-right" class="card rounded-lg grid grid-rows-3 gap-4"
                     style="background-image: url('{{ asset('images/TeamPicture/ProfileIcon_01.png') }}')">
                 </div>
@@ -82,5 +78,35 @@
             <source src="{{ asset('images/home/Teaser_2_Final.mp4') }}" type="video/mp4">
         </video>
     </section>
+    @include('component.aboutModal')
     @include('layouts.colaborate')
+
+    <script>
+        // Get the modal
+        var editAboutModal = document.getElementById("editAboutModal");
+
+        // Get the button that opens the modal
+        var editAboutBtn = document.getElementById("editAboutBtn");
+
+        // Get the <span> element that closes the modal
+        var closeEditModal = document.getElementsByClassName("closeEditModal")[0];
+
+
+        // When the user clicks the button, open the modal
+        editAboutBtn.onclick = function() {
+            editAboutModal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        closeEditModal.onclick = function() {
+            editAboutModal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == editAboutModal) {
+                editAboutModal.style.display = "none";
+            }
+        }
+    </script>
 @endsection
